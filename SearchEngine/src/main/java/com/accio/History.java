@@ -26,8 +26,8 @@ public class History extends HttpServlet {
             while (resultSet.next()) {
                 HistoryResult historyResult = new HistoryResult();
                 //substitute the corresponding attribute variable names for {keyword} and {Link} without the curly braces {}
-                historyResult.setKeyword(resultSet.getString("keyword"));
-                historyResult.setLink(resultSet.getString("Link"));
+                historyResult.setKeyword(resultSet.getString("{keyword}"));
+                historyResult.setLink(resultSet.getString("{Link}"));
                 results.add(historyResult);
             }
 
