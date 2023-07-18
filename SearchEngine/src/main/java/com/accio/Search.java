@@ -36,8 +36,8 @@ public class Search extends HttpServlet {
             //Transferring values from resultSet to results ArrayList
             while (resultSet.next()) {
                 SearchResult searchResult = new SearchResult();
-                searchResult.setTitle(resultSet.getString("pageTitle"));
-                searchResult.setLink(resultSet.getString("pageLink"));
+                searchResult.setTitle(resultSet.getString("{pageTitle}"));
+                searchResult.setLink(resultSet.getString("{pageLink}"));
                 results.add(searchResult);
             }
 
