@@ -18,7 +18,7 @@ The web application has the following primary features:
 5. In the java file at ```/WebCrawler/src/main/java/org/accio/DatabaseConnection.java```, add the username and password of your MySQL database to establish a connection to the database (as indicated in the comments of the program).  
 6. Open the java file at the location ```/WebCrawler/src/main/java/org/accio/Crawler.java```. In the main function of this java program, add the required URLs so that web data can be scraped from the respective webpages, in this manner: ```crawler.getTextsAndLinks("url", 1);``` (replace ```url``` with the desired URL). For example: ```crawler.getTextsAndLinks("https://javatpoint.com", 1);```. A deeper web scraping can be performed by icreasing the ```MAX_DEPTH``` parameter in the ```Crawler.java``` program file (initially set to ```2```.)  
 7.  Run the java file at ```/WebCrawler/src/main/java/org/accio/Crawler.java```; this java program file contains the _main_ function and therefore the project can be thus run by running the aforementioned java file.  
-8.  On succesfully urunning the ```Web Crawler``` project, the required webpage data will be scraped from the given webpages and added to your MySQL database.
+8.  On successfully urunning the ```Web Crawler``` project, the required webpage data will be scraped from the given webpages and added to your MySQL database.
 
 ### Running the _Search Engine_ project
 1. Open the ```SearchEngine``` project folder in your IDE or code editor.  
