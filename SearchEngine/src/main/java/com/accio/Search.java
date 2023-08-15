@@ -22,22 +22,20 @@ public class Search extends HttpServlet {
             Connection connection = DatabaseConnection.getConnection();
 
             //Store the query of the user as history
-            //substitute the corresponding table name (in the database) for {history} without the curly braces {}
-            PreparedStatement preparedStatement = connection.prepareStatement("Insert into {history} values(?, ?);");
+            PreparedStatement preparedStatement = connection.prepareStatement("Insert into history values(?, ?);");
             preparedStatement.setString(1, keyword);
             preparedStatement.setString(2, "http://localhost:8080/SearchEngine/Search?keyword=" + keyword);
             preparedStatement.executeUpdate();
 
             //Getting results after running ranking query
-            //{pageTitle}, {pageLink} and {pageText} are the attributes of the table {pages} in the SQL database of webpages. The corresponding attribute variable names and table name should be substituted without the curly braces {}
-            ResultSet resultSet = connection.createStatement().executeQuery("select {pageTitle}, {pageLink}, (length(lower({pageText})) - length(replace(lower({pageText}), '" + keyword.toLowerCase() + "', '')))/length('" + keyword + "') as countOccurrences from {pages} order by countOccurrences desc limit 30");
+            ResultSet resultSet = connection.createStatement().executeQuery("select pageTitle, pageLink, (length(lower(pageText)) - length(replace(lower(pageText), '" + keyword.toLowerCase() + "', '')))/length('" + keyword + "') as countOccurrences from pages order by countOccurrences desc limit 30");
             ArrayList<SearchResult> results = new ArrayList<>();
 
             //Transferring values from resultSet to results ArrayList
             while (resultSet.next()) {
                 SearchResult searchResult = new SearchResult();
-                searchResult.setTitle(resultSet.getString("{pageTitle}"));
-                searchResult.setLink(resultSet.getString("{pageLink}"));
+                searchResult.setTitle(resultSet.getString("pageTitle"));
+                searchResult.setLink(resultSet.getString("pageLink"));
                 results.add(searchResult);
             }
 
