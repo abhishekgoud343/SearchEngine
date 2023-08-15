@@ -18,16 +18,14 @@ public class History extends HttpServlet {
         try {
             //Setting up connection to database
             Connection connection = DatabaseConnection.getConnection();
-            //substitute the corresponding table name (in the database) for {history} without the curly braces {}
-            ResultSet resultSet = connection.createStatement().executeQuery("Select * from {history};");
+            ResultSet resultSet = connection.createStatement().executeQuery("Select * from history;");
             ArrayList<HistoryResult> results = new ArrayList<>();
 
             //Transferring values from resultSet to results ArrayList
             while (resultSet.next()) {
                 HistoryResult historyResult = new HistoryResult();
-                //substitute the corresponding attribute variable names for {keyword} and {Link} without the curly braces {}
-                historyResult.setKeyword(resultSet.getString("{keyword}"));
-                historyResult.setLink(resultSet.getString("{Link}"));
+                historyResult.setKeyword(resultSet.getString("keyword"));
+                historyResult.setLink(resultSet.getString("link"));
                 results.add(historyResult);
             }
 
