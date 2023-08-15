@@ -4,16 +4,16 @@ The web application has the following primary features:
   ### 1. Search:
   For a searched query, the most relevant webpages will be displayed in a ranked manner. The top 30 most relevant results will be displayed by default.
   The search results would be obtained from a given SQL database to which a connection should be established first.
-  The Java-based WebCrawler is made use of to obtain webpages from the _Worlwide Web_ using Depth Limited Search, a variation of Depth First Search (DFS). These webpages would be stored in the database and can be accessed for seach queries.
+  The Java-based WebCrawler is made use of to obtain webpages from the _Worlwide Web_ using Depth Limited Search, a variation of Depth First Search (DFS). These webpages would be stored in the database and can be accessed for search queries.
   ### 2.  Search History:
   The search queries will be stored in the database and can be obtained using the **history** feature whenever required.
   There is also the option to clear all search history from the database.
 
 ## Instructions to run the Project locally
 ### Web Scarping to your MySQL database using _WEB CRAWLER_
-1. Create a MySQL database and table to store the _page title_, _page link_, and _page text_ obtained from web pages through web scraping. The SQL commands used for creating the MySQL database for this project are provided in the text file ```sql_commands.txt```. Using different attributes, names etc in the database, than those in the ```sql_commands.txt``` text file, would require making corresponding changes in the project code.  
+1. Create a MySQL database and table to store the _page title_, _page link_, and _page text_ obtained from web pages through web scraping. The SQL commands used for creating the MySQL database for this project are provided in the text file [```sql_commands.txt```](https://github.com/abhishekgoud343/SearchEngine/blob/main/sql_commands.txt). Using different attributes, names etc in the database, than those in the ```sql_commands.txt``` text file, would require making corresponding changes in the project code.  
 2.  Open the ```Web Crawler``` project folder in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
-3. Install the ```org.jsoup:jsoup:1.16.1``` library (not necessarily the same version) from Maven repository in the project.  
+3. Install the ```jsoup``` library from Maven repository in the project.  
 4. Download the ```MySQL Connector``` archive file from [here](https://dev.mysql.com/downloads/connector/j/) and extract it. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the extracted folder as source for the library.  
 5. In the java file at ```/WebCrawler/src/main/java/org/accio/DatabaseConnection.java```, add the username and password of your MySQL database to establish a connection to the database (as indicated in the comments of the program).  
 6. Open the java file at the location ```/WebCrawler/src/main/java/org/accio/Crawler.java```. In the main function of this java program, add the required URLs so that web data can be scraped from the respective webpages, in this manner: ```crawler.getTextsAndLinks("url", 1);``` (replace ```url``` with the desired URL). For example: ```crawler.getTextsAndLinks("https://javatpoint.com", 1);```. A deeper web scraping can be performed by icreasing the ```MAX_DEPTH``` parameter in the ```Crawler.java``` program file (initially set to ```2```.)  
@@ -23,10 +23,10 @@ The web application has the following primary features:
 ### Running the _Search Engine_ project
 1. Open the ```SearchEngine``` project folder in your IDE or code editor.  
 2. Install the ```Smart Tomcat``` plugin on your IDE. Then download the ```Apache Tomcat``` archive file from [here](https://tomcat.apache.org/download-90.cgi) and extract it. Add a _run/debug configuration_ of ```Smart Tomcat``` type and select the extracted ```Apache Tomcat``` folder as the _Tomcat server_; choose the location ```/SearchEngine/src/main/webapp``` as _Deployment directory_; and select ```SearchEngine``` as the _classpath of module_.  
-3. Install the following libraries (not necessarily the same versions) from Maven repository in your IDE:
-   ```javax.servlet:javax.servlet-api:4.0.1```
-   ```junit:junit:4.13.2```
-   ```org.hamcrest:hamcrest-core:1.3```  
+3. Install the following libraries from Maven repository in your project:  
+   ```javax.servlet```  
+   ```junit```  
+   ```hamcrest-core```  
 4. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the earlier extracted ```MySQL Connector``` folder as source for the library.  
 5. In the java file at ```/WebCrawler/src/main/java/org/accio/DatabaseConnection.java```, add the username and password of your MySQL database to establish a connection to the database (as indicated in the comments of the program).  
 6. Run the _Search Engine_ project with the ```Tomcat``` configuration. A _localhost_ URL will be generated; the URL will load the _Search Engine_ web application.
