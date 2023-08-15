@@ -14,8 +14,7 @@ public class Indexer {
 
         connection = DatabaseConnection.getConnection();
 
-        //substitute the corresponding table name (in the database) for {pages} without the curly braces {}
-        PreparedStatement preparedStatement = connection.prepareStatement("Insert into {pages} values(?, ?, ?);");
+        PreparedStatement preparedStatement = connection.prepareStatement("Insert into pages values(?, ?, ?);");
         preparedStatement.setString(1, title);
         preparedStatement.setString(2, url);
         preparedStatement.setString(3, text);
