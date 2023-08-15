@@ -11,7 +11,7 @@ public class DatabaseConnection {
         if (connection != null)
             return connection;
 
-        //substitute the corresponding username and password in the string values without the curly braces {}
+        //substitute the username and password of your MySQL database respectively in the string values, without the curly braces {}
         String user = "{username}";
         String pwd = "{password}";
         String db = "search_engine";
