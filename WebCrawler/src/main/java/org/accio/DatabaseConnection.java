@@ -14,7 +14,7 @@ public class DatabaseConnection {
         //substitute the corresponding username, password and database_name in the string values without the curly braces {}
         String user = "{username}";
         String pwd = "{password}";
-        String db = "{database_name}";
+        String db = "search_engine";
 
         return getConnection(user, pwd, db);
     }
