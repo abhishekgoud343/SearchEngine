@@ -18,7 +18,7 @@ public class History extends HttpServlet {
         try {
             //Setting up connection to database
             Connection connection = DatabaseConnection.getConnection();
-            ResultSet resultSet = connection.createStatement().executeQuery("Select * from history;");
+            ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM history;");
             ArrayList<HistoryResult> results = new ArrayList<>();
 
             //Transferring values from resultSet to results ArrayList
