@@ -22,13 +22,13 @@ public class Search extends HttpServlet {
             Connection connection = DatabaseConnection.getConnection();
 
             //Store the query of the user as history
-            PreparedStatement preparedStatement = connection.prepareStatement("Insert into history values(?, ?);");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO VALUES(?, ?);");
             preparedStatement.setString(1, keyword);
             preparedStatement.setString(2, "http://localhost:8080/SearchEngine/Search?keyword=" + keyword);
             preparedStatement.executeUpdate();
 
             //Getting results after running ranking query
-            ResultSet resultSet = connection.createStatement().executeQuery("select pageTitle, pageLink, (length(lower(pageText)) - length(replace(lower(pageText), '" + keyword.toLowerCase() + "', '')))/length('" + keyword + "') as countOccurrences from pages order by countOccurrences desc limit 30");
+            ResultSet resultSet = connection.createStatement().executeQuery("SELECT pageTitle, pageLink, (LENGTH(LOWER(pageText)) - LENGTH(REPLACE(LOWER(pageText), '" + keyword.toLowerCase() + "', '')))/LENGTH('" + keyword + "') AS countOccurrences FROM pages ORDER BY countOccurrences DESC LIMIT 30");
             ArrayList<SearchResult> results = new ArrayList<>();
 
             //Transferring values from resultSet to results ArrayList
