@@ -14,7 +14,7 @@ public class Indexer {
 
         connection = DatabaseConnection.getConnection();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("Insert into pages values(?, ?, ?);");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO pages VALUES(?, ?, ?);");
         preparedStatement.setString(1, title);
         preparedStatement.setString(2, url);
         preparedStatement.setString(3, text);
