@@ -5,12 +5,12 @@ The web application has the following primary features:
   For a searched query, the most relevant webpages will be displayed in a ranked manner. The top 30 most relevant results will be displayed by default.
   The search results would be obtained from a given SQL database to which a connection should be established first.
   The Java-based WebCrawler is made use of to obtain webpages from the _Worlwide Web_ using Depth Limited Search, a variation of Depth First Search (DFS). These webpages would be stored in the database and can be accessed for search queries.
-  ### 2.  Search History:
+  ### 2. Search History:
   The search queries will be stored in the database and can be obtained using the **history** feature whenever required.
   There is also the option to clear all search history from the database.
 
 ## Instructions to run the Project locally
-### Web Scarping to your MySQL database using _WEB CRAWLER_
+### Web Scraping to your MySQL database using _WEB CRAWLER_
 1. Create a MySQL database and table to store the _page title_, _page link_, and _page text_ obtained from web pages through web scraping. The SQL commands used for creating the MySQL database for this project are provided in the text file [```sql_commands.txt```](https://github.com/abhishekgoud343/SearchEngine/blob/main/sql_commands.txt). Using different attributes, names etc in the database, than those in the ```sql_commands.txt``` text file, would require making corresponding changes in the project code.  
 2.  Open the ```Web Crawler``` project folder in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
 3. Install the ```jsoup``` library from Maven repository in the project.  
