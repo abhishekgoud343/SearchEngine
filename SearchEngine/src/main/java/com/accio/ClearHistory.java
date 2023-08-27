@@ -17,7 +17,7 @@ public class ClearHistory extends HttpServlet {
             //Setting up connection to database
             Connection connection = DatabaseConnection.getConnection();
             //substitute the name of the table {history} without the curly braces {}
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE from history;");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM history;");
             preparedStatement.executeUpdate();
 
             response.sendRedirect("http://localhost:8080/SearchEngine/History");
