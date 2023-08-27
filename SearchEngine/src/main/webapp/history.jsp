@@ -2,7 +2,7 @@
 <%@page import="com.accio.HistoryResult"%>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css?v=1.0">
     </head>
     <body>
         <h2>History</h2>
