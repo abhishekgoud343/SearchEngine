@@ -28,7 +28,7 @@ public class Search extends HttpServlet {
             preparedStatement.executeUpdate();
 
             //Getting results after running ranking query
-            preparedStatement = connection.prepareStatement("SELECT pageTitle, pageLink, (LENGTH(LOWER(pageText)) - LENGTH(REPLACE(LOWER(pageText), ?, '')))/LENGTH(?) AS countOccurrences FROM pages ORDER BY countOccurrences DESC LIMIT 30;");
+            preparedStatement = connection.prepareStatement("SELECT pageTitle, pageLink, (LENGTH(LOWER(pageText)) - LENGTH(REPLACE(LOWER(pageText), ?, '')))/LENGTH(?) AS countOccurrences FROM pages ORDER BY countOccurrences DESC LIMIT 30;"); //maximum search results set to 30 by default
             preparedStatement.setString(1, keyword.toLowerCase());
             preparedStatement.setString(2, keyword);
             ResultSet resultSet = preparedStatement.executeQuery();
