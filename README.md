@@ -11,7 +11,7 @@ The web application has the following primary features:
 
 ## Instructions to run the Project locally
 ### Web Scraping to your MySQL database using _WEB CRAWLER_
-1. Create a MySQL database and table(s) to store the _page title_, _page link_, and _page text_ obtained from web pages through web scraping. The SQL commands used for creating the MySQL database for this project are provided in the text file [```sql_commands.txt```](https://github.com/abhishekgoud343/SearchEngine/blob/main/sql_commands.txt). Using different attributes, table names etc in the database, than those in the ```sql_commands.txt``` file, would require making corresponding modifications in the project code.  
+1. Create a MySQL database and table(s) to store the _page title_, _page link_, and _page text_ obtained from web pages through web scraping. The SQL commands used for creating the MySQL database for this project are provided in the sql file [```sql_commands.sql```](https://github.com/abhishekgoud343/SearchEngine/blob/main/sql_commands.sql). Using different attributes, table names etc in the database, than those in the ```sql_commands.sql``` file, would require making corresponding modifications in the project code.  
 2.  Open the ```Web Crawler``` project folder in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
 3. Install the ```jsoup``` library from Maven repository in the project.  
 4. Download the ```MySQL Connector``` archive file from [here](https://dev.mysql.com/downloads/connector/j/) and extract it. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the extracted folder as source for the library.  
